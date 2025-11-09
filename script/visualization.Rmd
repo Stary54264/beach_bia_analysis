@@ -41,7 +41,8 @@ kable(table, caption = "Representative events in the beach area") |>
 time <- data |>
   count(dat) |>
   ggplot(aes(x = dat, y = n)) +
-  geom_point(alpha = 0.7, color = "purple") +
+  geom_line(color = "purple", alpha = 0.7) +
+  geom_point(color = "purple", alpha = 0.7) +
   labs(title = "Daily number of events from Oct 2025 to Dec 2025",
        x = "Date", y = "Number of Events") +
   theme_minimal()
@@ -49,10 +50,15 @@ time
 ```
 
 ```{r, echo=FALSE}
-map <- ggplot() +
+map <- data_loc |>
+  count(loc) |>
+  ggplot() +
   geom_sf(data = area, fill = "lightblue", alpha = 0.5) +
-  geom_sf(data = data_loc, color = "red", size = 2, alpha = 0.7) +
-  labs(title = "Geographic distribution of events within the beach area") +
+  geom_sf(aes(geometry = loc, size = n),
+          color = "red", alpha = 0.7, show.legend = FALSE) +
+  scale_size_continuous(range = c(1, 6)) +
+  labs(title = "Geographic distribution of events within the beach area",
+       size = "Number of Events") + # Better legend title
   theme_void()
 map
 ```
@@ -70,12 +76,15 @@ categ <- data |>
 categ
 ```
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 word_freq <- data |>
   unnest_tokens(word, descript) |>
   count(word, sort = TRUE) |>
   anti_join(stop_words) |>
   head(30)
+```
+
+```{r, echo=FALSE}
 ggplot(word_freq, aes(label = word, size = n, color = n)) +
   geom_text_wordcloud() +
   scale_size_area(max_size = 15) +
