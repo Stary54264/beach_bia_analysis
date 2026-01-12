@@ -26,7 +26,7 @@ table <- data |>
   head(10) |>
   gt()
 
-gtsave(table, filename = "graph/00_table.png")
+gtsave(table, filename = "graphs/00_table.png")
 
 
 # visualize time series
@@ -38,7 +38,7 @@ time <- data |>
   labs(x = "Date", y = "Number of Events") +
   theme_minimal()
 
-ggsave("graph/01_time.png", plot = time)
+ggsave("graphs/01_time.png", plot = time)
 
 
 # visualize map
@@ -51,7 +51,7 @@ map <- data_loc |>
   scale_size_continuous(range = c(1, 6)) +
   theme_void()
 
-ggsave("graph/02_map.png", plot = map)
+ggsave("graphs/02_map.png", plot = map)
 
 
 # visualize categories frequency
@@ -64,7 +64,7 @@ categ <- data |>
   labs(x = "Category", y = "Count") +
   theme_minimal()
 
-ggsave("graph/03_category.png", plot = categ)
+ggsave("graphs/03_category.png", plot = categ)
 
 
 # visualize word cloud
@@ -80,7 +80,7 @@ word <- ggplot(word_freq, aes(label = word, size = n, color = n)) +
   scale_color_gradient(low = "orange", high = "darkblue") +
   theme_minimal()
 
-ggsave("graph/04_word_cloud.png", plot = word)
+ggsave("graphs/04_word_cloud.png", plot = word)
 
 
 # visualize free and reservation proportion
@@ -107,7 +107,7 @@ reserv <- data |>
   theme_void()
 
 combined <- free + reserv
-ggsave("graph/05_free_reservation.png", plot = combined)
+ggsave("graphs/05_free_reservation.png", plot = combined)
 
 
 # visualize features frequency
@@ -120,4 +120,4 @@ feat <- data |>
   labs(x = "Feature", y = "Count") +
   theme_minimal()
 
-ggsave("graph/06_feature.png", plot = feat)
+ggsave("graphs/06_feature.png", plot = feat)
