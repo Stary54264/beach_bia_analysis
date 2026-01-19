@@ -14,7 +14,7 @@ event_full <- event |>
 
 
 # write raw dataset to rds file
-write_rds(event_full, "data/00_event_raw.rds")
+write_rds(event_full, "data/00_event/00_event_raw.rds")
 
 
 # get the beach area
@@ -29,4 +29,4 @@ polygon <- list_package_resources("fc443770-ef0a-4025-9c2c-2cb558bfab00") |>
 
 
 # write area data to rds file
-write_rds(polygon, "data/01_area.rds")
+write_rds(polygon, "data/00_event/01_area.rds")

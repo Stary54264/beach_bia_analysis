@@ -3,7 +3,7 @@ library(tidyverse)
 
 
 # read dataset
-event_filtered <- read_rds("data/02_event_filtered.rds")
+event_filtered <- read_rds("data/00_event/02_event_filtered.rds")
 
 
 # clean dataset
@@ -26,4 +26,4 @@ event_clean <- event_filtered |>
 
 
 # write cleaned dataset to rds file
-write_rds(event_clean, "data/03_event_clean.rds")
+write_rds(event_clean, "data/00_event/03_event_clean.rds")

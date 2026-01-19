@@ -4,8 +4,8 @@ library(tidyverse)
 
 
 # read dataset
-event_full <- read_rds("data/00_event_raw.rds")
-polygon <- read_rds("data/01_area.rds")
+event_full <- read_rds("data/00_event/00_event_raw.rds")
+polygon <- read_rds("data/00_event/01_area.rds")
 
 
 # select beach data
@@ -18,4 +18,4 @@ event_filtered <- event_sf |>
 
 
 # write filtered dataset to rds file
-write_rds(event_filtered, "data/02_event_filtered.rds")
+write_rds(event_filtered, "data/00_event/02_event_filtered.rds")
