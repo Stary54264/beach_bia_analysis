@@ -1,8 +1,6 @@
 # load packages
 library(ggwordcloud)
 library(gt)
-library(kableExtra)
-library(knitr)
 library(patchwork)
 library(sf)
 library(tidytext)
