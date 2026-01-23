@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo contains a study that examines the events and festivals being held within the beach BIA. By doing so, crucial insights could be drawn.
+This repo contains a study that examines the events and festivals being held within the beach BIA, as well as the buses and strretcars that serve the beach BIA. By doing so, crucial insights could be drawn.
 
 
 ## File Structure
@@ -11,7 +11,7 @@ The repo is structured as:
 
 -   `data` contains the raw and cleaned datasets from [Open Data Toronto](https://open.toronto.ca).
 -   `graphs` contains the generated graphs that would be used in the report.
--   `scripts` contains the R scripts used to download and clean data.
+-   `scripts` contains the R scripts used to download and clean data, as well as drawing graphs.
 
 
 ## Statement on LLM usage
