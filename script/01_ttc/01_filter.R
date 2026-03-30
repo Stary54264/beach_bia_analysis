@@ -13,7 +13,7 @@ beach <- data_raw |>
 
 # select buses/streetcars that serves the High Park
 park <- data_raw |>
-  filter(Route %in% c(30, 80, 203, 300, 501, 506))
+  filter(Route %in% c(30, 80, 203, 501, 506))
 
 
 # write filtered dataset to rds file
